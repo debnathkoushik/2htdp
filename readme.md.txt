@@ -1,0 +1,1 @@
+This is a repo with all the programming exercises from the book 2htdp.
