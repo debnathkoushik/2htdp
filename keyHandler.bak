@@ -1,0 +1,24 @@
+;; The first three lines of this file were inserted by DrRacket. They record metadata
+;; about the language level of this file in a form that our tools can easily process.
+#reader(lib "htdp-beginner-reader.ss" "lang")((modname keyHandler) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+(require 2htdp/image)
+(require 2htdp/universe)
+
+(define (drawImage stateX)
+  (place-image (circle 20 "solid" "red") stateX 80
+   (empty-scene 200 200)))
+
+(define (keyEvent stateX ke)
+  (cond
+    [(string=? ke "right")
+     (+ 1 stateX)]
+    [(string=? ke "left")
+     (- stateX 1)]))
+
+;(define (changeState stateX)
+ ; stateX)
+
+(big-bang 100
+  [to-draw drawImage]
+  [on-key keyEvent])
+  ;[on-tick changeState])

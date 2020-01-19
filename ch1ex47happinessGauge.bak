@@ -1,0 +1,29 @@
+;; The first three lines of this file were inserted by DrRacket. They record metadata
+;; about the language level of this file in a form that our tools can easily process.
+#reader(lib "htdp-beginner-reader.ss" "lang")((modname happinessGauge) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+(require 2htdp/image)
+(require 2htdp/universe)
+
+(define (drawImage currentStateY)
+  (place-image(text/font "happiness gauge" 25 "black" "Gill Sans" 'swiss 'italic 'bold #f) 300 200
+    (place-image(rectangle 300 currentStateY "solid" "red") 300 200
+      (place-image (rectangle 301 101 "outline" "black") 300 200
+        (empty-scene 600 400)))))
+
+(define (changeState currentStateY)
+  (- currentStateY (* 0.1 currentStateY)))
+
+(define (keyEvent currentStateY ke)
+  (cond
+    [(string=? ke "up")
+     (+ (* 1/3 currentStateY) currentStateY)]
+    [(string=? ke "down")
+     (+ (* 1/5 currentStateY) currentStateY)]))
+
+(define (end? currentStateY)
+  (if (< currentStateY 0) #true #false))
+(big-bang 100
+  [to-draw drawImage]
+  [on-tick changeState]
+  [stop-when end?]
+  [on-key keyEvent])

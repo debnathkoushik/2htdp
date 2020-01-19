@@ -1,0 +1,26 @@
+;; The first three lines of this file were inserted by DrRacket. They record metadata
+;; about the language level of this file in a form that our tools can easily process.
+#reader(lib "htdp-beginner-reader.ss" "lang")((modname ch1ex51) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+(require 2htdp/image)
+(require 2htdp/universe)
+
+(define CANVAS-X 200)
+(define CANVAS-Y 200)
+(define POSITION-OF-SIGNAL-X 25)
+(define POSITION-OF-SIGNAL-Y 25)
+
+(define (trafficSignal number)
+  (cond
+    [(= number 0) (drawLight "red")]
+    [(= number 1) (drawLight "yellow")]
+    [(= number 2) (drawLight "green")]))
+
+(define (drawLight colour)
+  (place-image(circle 20 "solid" colour)  POSITION-OF-SIGNAL-X  POSITION-OF-SIGNAL-Y (empty-scene CANVAS-X CANVAS-Y)))
+
+(define (changeState currentState)
+  (modulo (+ currentState 1) 3))
+
+(big-bang 0
+    [to-draw trafficSignal]
+    [on-tick changeState])
