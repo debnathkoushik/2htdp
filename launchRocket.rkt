@@ -254,8 +254,8 @@
 1.0 0 -1 -1 -1 -1 -1 -1 0 0 0 0 1 0 0.0 0.0 0.0 0.0 0.0 0.0 0 0 0 255
 255 255 -1 -1 17 1 #"\0"
 0 -1 1 #"\0"
-1.0 0 -1 -1 -1 -1 -1 -1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 255 255 255 -1 -1
-          0 272 0 4 3 85
+1.0 0 -1 -1 -1 -1 -1 -1 0 0 0 0 1 0 0.0 0.0 0.0 0.0 0.0 0.0 0 0 0 255
+255 255 -1 -1           0 284 0 4 3 85
 (4
  #";; The first three lines of this file were inserted by DrRacket. The"
  #"y record metadata"
@@ -447,7 +447,7 @@
 0 0 24 29 1 #"\n"
 0 0 24 29 1 #"\n"
 0 0 17 3 64
-#";the fixed position of the rocket along the x-axis of the canvas"
+#";the fixed position of the ROCKET along the x-axis of the canvas"
 0 0 24 29 1 #"\n"
 0 0 17 3 57 #";here the fixed position is middle position along x-axis "
 0 0 24 29 1 #"\n"
@@ -465,11 +465,11 @@
 0 0 24 29 1 #"\n"
 0 0 24 29 1 #"\n"
 0 0 17 3 64
-#";the final position of the rocket along the y-axis of the canvas"
+#";the final position of the ROCKET along the y-axis of the canvas"
 0 0 24 29 1 #"\n"
 0 0 17 3 95
 (12
- #";as the position of the rocket depend on its centre, therefore its h"
+ #";as the position of the ROCKET depend on its centre, therefore its h"
  #"eight is being divided by 2"
 ) 0 0 24 29 1 #"\n"
 0 0 17 3 55 #";and also the canvas is being drawn on the 4th quadrant"
@@ -490,12 +490,12 @@
 0 0 24 29 1 #"\n"
 0 0 24 29 1 #"\n"
 0 0 17 3 62
-#";initial position of the rocket along the y-axis of the canvas"
+#";initial position of the ROCKET along the y-axis of the canvas"
 0 0 24 29 1 #"\n"
 0 0 17 3 123
 (13
  #";the image height is being divided by 2 and subtracted from the y-co"
- #"ordinate of the canvas as the rocket starts from bottom"
+ #"ordinate of the canvas as the ROCKET starts from bottom"
 ) 0 0 24 29 1 #"\n"
 0 0 17 3 55 #";and also the canvas is being drawn on the 4th quadrant"
 0 0 24 29 1 #"\n"
@@ -580,11 +580,14 @@
 0 0 24 29 1 #"\n"
 0 0 17 3 25 #";number, string -> number"
 0 0 24 29 1 #"\n"
-0 0 17 3 54 #";launches the rocket only on pressing the spacebar key"
-0 0 24 29 1 #"\n"
-0 0 17 3 101
+0 0 17 3 134
 (15
- #";reduces the position of the rocket along the y-axis to fulfill the "
+ #";launches the ROCKET only on pressing the spacebar key once when the"
+ #" rocket is in INITIAL-POSITION-Y(i.e. at the bottom of the canvas)"
+) 0 0 24 29 1 #"\n"
+0 0 17 3 101
+(16
+ #";reduces the position of the ROCKET along the y-axis to fulfill the "
  #"condition in changeState function"
 ) 0 0 24 29 1 #"\n"
 0 0 24 3 1 #"("
@@ -600,6 +603,16 @@
 0 0 24 3 3 #"  ("
 0 0 14 3 2 #"if"
 0 0 24 3 2 #" ("
+0 0 14 3 1 #"="
+0 0 24 3 1 #" "
+0 0 14 3 13 #"currentStateY"
+0 0 24 3 1 #" "
+0 0 14 3 18 #"INITIAL-POSITION-Y"
+0 0 24 3 1 #")"
+0 0 24 29 1 #"\n"
+0 0 24 3 7 #"      ("
+0 0 14 3 2 #"if"
+0 0 24 3 2 #" ("
 0 0 14 3 8 #"string=?"
 0 0 24 3 1 #" "
 0 0 14 3 10 #"keyPressed"
@@ -610,7 +623,9 @@
 0 0 24 3 1 #" "
 0 0 14 3 13 #"currentStateY"
 0 0 24 3 1 #" "
-0 0 21 3 1 #"3"
+0 0 21 3 1 #"1"
+0 0 24 3 2 #") "
+0 0 14 3 13 #"currentStateY"
 0 0 24 3 2 #") "
 0 0 14 3 13 #"currentStateY"
 0 0 24 3 2 #"))"
@@ -618,7 +633,7 @@
 0 0 24 29 1 #"\n"
 0 0 17 3 18 #";number -> boolean"
 0 0 24 29 1 #"\n"
-0 0 17 3 52 #";stops the rocket at the top-most part of the canvas"
+0 0 17 3 52 #";stops the ROCKET at the top-most part of the canvas"
 0 0 24 29 1 #"\n"
 0 0 24 3 1 #"("
 0 0 15 3 6 #"define"
@@ -678,9 +693,9 @@
 0 0 24 29 1 #"\n"
 0 0 24 29 1 #"\n"
 0 0 17 3 78
-(16
+(17
  #";calls the main function and passes the intial/starting position of "
- #"the rocket"
+ #"the ROCKET"
 ) 0 0 24 29 1 #"\n"
 0 0 24 3 1 #"("
 0 0 14 3 4 #"main"
