@@ -255,7 +255,7 @@
 255 255 -1 -1 17 1 #"\0"
 0 -1 1 #"\0"
 1.0 0 -1 -1 -1 -1 -1 -1 0 0 0 0 1 0 0.0 0.0 0.0 0.0 0.0 0.0 0 0 0 255
-255 255 -1 -1           0 529 0 4 3 85
+255 255 -1 -1           0 541 0 4 3 85
 (4
  #";; The first three lines of this file were inserted by DrRacket. The"
  #"y record metadata"
@@ -586,13 +586,13 @@
 0 0 24 3 2 #"))"
 0 0 24 29 1 #"\n"
 0 0 24 29 1 #"\n"
-0 0 17 3 64
-#";the final position of the rocket along the y-axis of the canvas"
+0 0 17 3 66
+#";the final position of the 'ROCKET' along the y-axis of the canvas"
 0 0 24 29 1 #"\n"
-0 0 17 3 95
+0 0 17 3 97
 (17
- #";as the position of the rocket depend on its centre, therefore its h"
- #"eight is being divided by 2"
+ #";as the position of the 'ROCKET' depend on its centre, therefore its"
+ #" height is being divided by 2"
 ) 0 0 24 29 1 #"\n"
 0 0 17 3 55 #";and also the canvas is being drawn on the 4th quadrant"
 0 0 24 29 1 #"\n"
@@ -611,13 +611,13 @@
 0 0 24 3 2 #"))"
 0 0 24 29 1 #"\n"
 0 0 24 29 1 #"\n"
-0 0 17 3 62
-#";initial position of the rocket along the y-axis of the canvas"
+0 0 17 3 64
+#";initial position of the 'ROCKET' along the y-axis of the canvas"
 0 0 24 29 1 #"\n"
-0 0 17 3 123
+0 0 17 3 125
 (18
  #";the image height is being divided by 2 and subtracted from the y-co"
- #"ordinate of the canvas as the rocket starts from bottom"
+ #"ordinate of the canvas as the 'ROCKET' starts from bottom"
 ) 0 0 24 29 1 #"\n"
 0 0 17 3 55 #";and also the canvas is being drawn on the 4th quadrant"
 0 0 24 29 1 #"\n"
@@ -797,8 +797,8 @@
 0 0 24 29 1 #"\n"
 0 0 17 3 17 #";number -> number"
 0 0 24 29 1 #"\n"
-0 0 17 3 66
-#";changes the y-coordinate so that the rocket raises up by 3 pixels"
+0 0 17 3 68
+#";changes the y-coordinate so that the 'ROCKET' raises up by 3 pixels"
 0 0 24 29 1 #"\n"
 0 0 24 3 1 #"("
 0 0 15 3 6 #"define"
@@ -855,10 +855,13 @@
 0 0 24 29 1 #"\n"
 0 0 17 3 25 #";number, string -> number"
 0 0 24 29 1 #"\n"
-0 0 17 3 54 #";launches the rocket only on pressing the spacebar key"
-0 0 24 29 1 #"\n"
-0 0 17 3 101
+0 0 17 3 114
 (21
+ #";launches the 'ROCKET' only on pressing the spacebar key once and wh"
+ #"en the 'ROCKET' is still at INITIAL-POSITION-Y"
+) 0 0 24 29 1 #"\n"
+0 0 17 3 101
+(22
  #";reduces the position of the rocket along the y-axis to fulfill the "
  #"condition in changeState function"
 ) 0 0 24 29 1 #"\n"
@@ -875,6 +878,16 @@
 0 0 24 3 3 #"  ("
 0 0 14 3 2 #"if"
 0 0 24 3 2 #" ("
+0 0 14 3 1 #"="
+0 0 24 3 1 #" "
+0 0 14 3 13 #"currentStateY"
+0 0 24 3 1 #" "
+0 0 14 3 18 #"INITIAL-POSITION-Y"
+0 0 24 3 1 #")"
+0 0 24 29 1 #"\n"
+0 0 24 3 7 #"      ("
+0 0 14 3 2 #"if"
+0 0 24 3 2 #" ("
 0 0 14 3 8 #"string=?"
 0 0 24 3 1 #" "
 0 0 14 3 10 #"keyPressed"
@@ -886,6 +899,8 @@
 0 0 14 3 13 #"currentStateY"
 0 0 24 3 1 #" "
 0 0 21 3 1 #"1"
+0 0 24 3 2 #") "
+0 0 14 3 13 #"currentStateY"
 0 0 24 3 2 #") "
 0 0 14 3 13 #"currentStateY"
 0 0 24 3 2 #"))"
@@ -953,7 +968,7 @@
 0 0 24 29 1 #"\n"
 0 0 24 29 1 #"\n"
 0 0 17 3 78
-(22
+(23
  #";calls the main function and passes the intial/starting position of "
  #"the rocket"
 ) 0 0 24 29 1 #"\n"
