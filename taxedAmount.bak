@@ -1,0 +1,13 @@
+;; The first three lines of this file were inserted by DrRacket. They record metadata
+;; about the language level of this file in a form that our tools can easily process.
+#reader(lib "htdp-beginner-reader.ss" "lang")((modname taxedAmount) (read-case-sensitive #t) (teachpacks ()) (htdp-settings #(#t constructor repeating-decimal #f #t none #f () #f)))
+(define FIRST-PRICE-RANGE 1000)
+(define SECOND-PRICE-RANGE 10000)
+
+(define (totalAmount priceOfItem)
+  (cond
+   [(< priceOfItem 1000) 0]
+   [(<= 1000 priceOfItem 10000) (* 0.05 priceOfItem)]
+   [(> priceOfItem 10000) (* 0.08 priceOfItem)]))
+
+(totalAmount 10)
